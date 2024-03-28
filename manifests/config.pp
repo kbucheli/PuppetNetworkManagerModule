@@ -95,7 +95,8 @@ class networkmanager::config (
       group   => 'root',
       recurse => true,
       purge   => $erase_unmanaged_keyfiles,
-      mode    => '0600';
+      mode    => '0600',
+      notify  => Class['networkmanager::service'];
   }
 
 }
